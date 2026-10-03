@@ -3,6 +3,8 @@
 **Canon source:** `docs/BIZRA_URP_System_Architecture_HLD_LLD_Technical_Spec_Master_v1.1.docx`  
 **Also at:** `/home/bizra-operating-system/Downloads/BIZRA_URP_System_Architecture_HLD_LLD_Technical_Spec_Master_v1.1.docx`  
 **sha256:** `49877b34f117b419dd7131e818f8725ccbc3a901b272f5167e79101dc480bd82`  
+**Readable §§0–59 twin:** `docs/BIZRA_URP_NORTH_STAR_MANIFEST_PRODUCT_SPEC_v0.md` (`sha256:38303a36517cdf0ffe41b24f85fcebeae4956e7806487e0416979a65239c0705`)  
+**Binding receipt:** `docs/BIZRA_URP_NORTH_STAR_BINDING_v0.md`  
 **Document status (from control table):** Normative target architecture; current deployment must be rebound by separate evidence.  
 **Maptree generated:** 2026-10-03 · peak lens (structure → proof ceiling → live preview binding)
 
