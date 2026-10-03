@@ -344,26 +344,43 @@ export function Face() {
           <p className="font-mono text-xs uppercase tracking-widest text-gold">
             invoke() · {cycle.truth_label} · seal {cycle.seal}
           </p>
-          <p className="mt-2 font-mono text-[11px] uppercase tracking-widest text-mute">
-            TFP{" "}
-            {(["mind", "memory", "logic", "crypto", "receipts", "human"] as const)
-              .map((stage) => `${stage}:${cycle.protocol[stage]}`)
-              .join(" · ")}
-          </p>
-          <p className="mt-2 font-mono text-[11px] uppercase tracking-widest text-mute">
+          <ol className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-6" aria-label="Third Fact flow">
+            {(["mind", "memory", "logic", "crypto", "receipts", "human"] as const).map((stage, i) => {
+              const v = cycle.protocol[stage];
+              const tone =
+                v === "pass"
+                  ? "border-gold/50 text-gold"
+                  : v === "block" || v === "withhold"
+                    ? "border-line text-mute"
+                    : "border-line/60 text-mute/80";
+              return (
+                <li
+                  key={stage}
+                  className={`border bg-ink/40 px-2 py-2 text-center transition-colors duration-300 ${tone}`}
+                  style={{ transitionDelay: `${i * 40}ms` }}
+                >
+                  <span className="block font-mono text-[10px] uppercase tracking-widest">{stage}</span>
+                  <span className="mt-1 block font-mono text-[10px] uppercase tracking-widest opacity-80">
+                    {v}
+                  </span>
+                </li>
+              );
+            })}
+          </ol>
+          <p className="mt-3 font-mono text-[11px] uppercase tracking-widest text-mute">
             PoT F:{cycle.pot.formal} · C:{cycle.pot.cryptographic} · E:{cycle.pot.empirical} · $:
             {cycle.pot.economic} · FDE {cycle.fde.class} · HHMM {cycle.hhmm.hidden}
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-ivory">{cycle.spearpoint_next}</p>
+          <p className="mt-3 font-display text-lg leading-snug text-ivory">{cycle.spearpoint_next}</p>
           <p className="mt-2 text-xs text-mute">
-            minted {String(cycle.minted)} · effect_ran {String(cycle.effect_ran)} · process events{" "}
-            {cycle.process.length}
+            minted {String(cycle.minted)} · effect_ran {String(cycle.effect_ran)} · Δauth{" "}
+            {cycle.authority_delta} · process {cycle.process.length}
           </p>
           {cycle.retrieve.hits.length > 0 ? (
             <ul className="mt-3 space-y-1 border-t border-line pt-3">
               {cycle.retrieve.hits.slice(0, 3).map((hit) => (
                 <li key={hit.id} className="font-mono text-[11px] uppercase tracking-widest text-mute">
-                  rag/{hit.kind} · {hit.title}
+                  soil/{hit.kind} · {hit.title}
                   <span className="mt-0.5 block normal-case tracking-normal text-ivory/80">{hit.body}</span>
                 </li>
               ))}

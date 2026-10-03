@@ -34,7 +34,7 @@ Digest + hashes: `docs/SYSTEM_ROOT_REFERENCES.md`
 - `docs/BIZRA_URP_NORTH_STAR_BINDING_v0.md` — DOD/invariant distance vs local preview
 - `docs/BIZRA_URP_v1.1_SYSTEM_PEAK_DOC_MAPTREE.md` — section ↔ live-binding map
 - `docs/ECOSYSTEM_MAP_AND_HEALTH.md` — cross-repo scan + health receipt
-- `docs/SEASON_PEAK_SYNTHESIS.md` — SNR gems vs noise + invoke() spearpoint
+- `docs/SEASON_PEAK_SYNTHESIS.md` — proof-bound peak v2 (SNR · linchpin · razor · C-005 tip)
 - `docs/MISSION_LOOP_HARNESS_BINDING_v0.md` — mission-loop/harness bind (no new organs)
 - `src/lib/dema/invoke-loop.ts` — ultra-micro Third Fact `invoke()` (preview only)
 - `src/lib/urp/micro-hgraph.ts` — local canon hypergraph retrieve (not hosted RAG)

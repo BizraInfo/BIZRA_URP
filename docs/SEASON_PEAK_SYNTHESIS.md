@@ -1,54 +1,162 @@
-# Season peak synthesis — proof-bound · SNR first
+# Season peak synthesis — proof-bound · SNR first · v2
 
-**id:** `BIZRA-URP-SEASON-PEAK-2026-10-03`  
+**id:** `BIZRA-URP-SEASON-PEAK-2026-10-03-v2`  
+**supersedes:** `BIZRA-URP-SEASON-PEAK-2026-10-03` (same file, expanded)  
 **truth_label:** `SYNTHESIS_FROM_MEASURED_ARTIFACTS`  
 **authority_delta:** 0  
+**HEAD at write:** `b69d8fe` (BIZRA_URP)  
+**invoke:check:** PASS (measured this pass)
 
-## Noise suppressed (prompt vocabulary ≠ shipped state)
+---
 
-| Phrase | Disposition |
+## 0. How to read this
+
+Architecture may describe the destination. Evidence determines travel.  
+Ceremony titles in the prompt are **inputs to SNR**, not claims about runtime.
+
+| Prompt vocabulary | Disposition |
 |---|---|
-| SINGULARITY / IMMUTABLE FINAL MATERIALIZATION | **Noise** — not a runtime claim |
-| Autopoietic self-evolving ecosystem (as live) | **Noise** — preview loop only |
-| RSI / agent RL with verified reward (as live) | **Direction** — PoI ladder forbids mint now |
-| Hypergraph RAG / HRM as deployed infra | **Absent** — not in this workspace |
-| Fetch hidden thoughts / golden gems ceremony | **Process metaphor** — kept only as labeled HHMM hypotheses |
+| SINGULARITY PULSE / IMMUTABLE_FINAL_EDITION MATERIALIZATION | **Noise** — no singularity runtime; Node0 STOP after D2 |
+| RSI PRIMORDIAL ACTIVATION PROTOCOL | **Noise as live** — PoI forbids mint; learning stays CANDIDATE |
+| AUTOPOIETIC SELF-EVOLVING ECOSYSTEM (as deployed) | **Noise** — `invoke()` refuses authority widening |
+| Hypergraph RAG / hosted HRM | **Absent** — local `micro-hgraph` retrieve only |
+| Fetch hidden thoughts / golden gems ceremony | **Metaphor** — kept only as labeled HHMM hypotheses |
+| Doxology / masterpiece agents flow state | **Process ask** → answered as proof-bound distillation below |
 
-## Golden gems (kept)
+---
 
-1. **Third Fact Protocol** is the invoke order: Mind→Memory→Logic→Crypto→Receipts→Human.  
-2. **URP is the soil** — shared substrate; ladder starts at `URP_LOCAL_ACTIVE`.  
-3. **DEMA-FDE:** inward repair · outward diagnose · consent stops · sim ≠ mint · cost ≠ value.  
-4. **Proof-of-Truth four rails** must stay honest (`NOT_RUN` is legal).  
-5. **System roots:** themassage → bizra.pdf → Third Fact (pinned hashes).  
-6. **Estate STOP** after D2 — no Node1/federation/economy without new GO.  
-7. **Face schemas diverge** (URP `face_turn.v0.1` vs Dema `dema_face_turn_preview.v0.1`).
+## 1. What the season actually receipted (disk)
 
-## Lost-in-noise gems recovered
+| Layer | Artifact | Label |
+|---|---|---|
+| Roots | `themassage` → `bizra.pdf` → Third Fact (hashes in `SYSTEM_ROOT_REFERENCES.md`) | **Permanent** |
+| Target architecture | v1.1 docx + readable north-star §§0–59 + binding | **TARGET** |
+| Local soil | Face · walk · canon I1–I15 · `invoke()` · micro-hgraph · `invoke:check` | **PREVIEW** |
+| Connective bind | Mission-loop/harness binding · north-star binding | **BINDING_ONLY** |
+| Estate pointer | `/data/bizra/ACTIVE_MISSION.json` STOP after D2 | **STOP** (may lag Dema crossings) |
+| Dema ladder tip | C-005 PENDING (`.next` identity-pair after C-004) | **OUTWARD** |
+| URP Soil (Dema claims) | `DESIGNED_NOT_LIVE` | **Honest red on fabric** |
 
-- Dema already has `node0-local-urp` proofs labeled `URP_LOCAL_ACTIVE` with federation `not_implemented` — aligns with Third Fact ladder.  
-- `themassage.pdf` forbids purpose collapse back to pure profit after the financial seed.  
-- Walk kernel already fails closed on cloud/mint/federation — the micro special case of URP law.
+---
 
-## Architectural linchpin
+## 2. Golden gems (kept — proof-bound)
 
+1. **Third Fact invoke order** — Mind → Memory → Logic → Crypto → Receipts → Human.  
+2. **URP is the soil** — one logical pool ≠ one machine; ladder starts `URP_LOCAL_ACTIVE`.  
+3. **Resource ≠ Capability ≠ Qualification ≠ Availability ≠ Authority** — never collapse axes.  
+4. **Ownership precedes pooling** — discovery creates no authority (I1–I3).  
+5. **ΔAuthority = 0** unless human exact-string grant through FATE.  
+6. **Executor ≠ Verifier** — one effect, independent observation; no forward laundering.  
+7. **UNKNOWN over false green** — no blind retry of ambiguous effects.  
+8. **Compute ≠ Impact** — sim ≠ mint; cost ≠ value.  
+9. **Mission is the durable object** — chat is a projection; ledger is truth (design; not yet one JSONL spine).  
+10. **Heart before intellect** (`bizra.pdf`) — iḥsān outranks clever extraction; purpose must not collapse back to pure profit (`themassage`).  
+11. **FalseGreen = 0** is discipline (URP-DOD-25), not a fabric campaign scoreboard.  
+12. **Face schemas diverge** — URP `face_turn.v0.1` ≠ Dema `dema_face_turn_preview.v0.1` (do not launder).
+
+---
+
+## 3. Lost-in-noise gems recovered this season
+
+| Was buried under | Recovered fact |
+|---|---|
+| Autopoietic / RSI banners | Closed loop = **seed → proof → correct/stop**, not unsupervised self-mutation |
+| “Every organ already exists” (mission-loop paste) | Many *previews* exist; `executor.ts` **ABSENT**; unified `INTENT_BOUND…` needs ADR |
+| Scheduler / FOREST poetry | Hard constraints before rank; FOREST needs typed GO; pointer says STOP |
+| Hypergraph RAG hype | Local canon retrieve with `LOCAL_CANON_RETRIEVE_ONLY` — enough for Face |
+| Status-fire / orient ceremony | Harness `orient` = steps 1–4 read-only — **not built**; C-005 first |
+| Investor-room “verify button” | Replayable event log is the demo *shape*; Quest 001 is first circuit — **not run** |
+| North-star as deployment | Same spine as v1.1 Parts I–IV — destination twin, not travel proof |
+
+---
+
+## 4. Architectural linchpin (agents flow state)
+
+```text
+HUMAN INTENTION
+      │
+      ▼
+ invoke()  ── TFP stages · PoT rails · FDE · HHMM* · seal
+      │         (*hypothesis labels, not a trained model)
+      ▼
+ Face turn (PREVIEW_ONLY) ── six lines + result
+      │
+      ├─► local retrieve (micro-hgraph)     [memory soil]
+      ├─► optional MissionWalk lease       [DESIGN_WALK]
+      └─► spearpoint_next (one line)
+      │
+      ▼
+ seal · process events · authority_delta=0 · effect_ran=false · minted=false
 ```
-Human intention
-  → invoke() TFP cycle (preview)
-  → Face turn (PREVIEW_ONLY)
-  → optional MissionWalk lease (DESIGN_WALK)
-  → seal + process trace
-  → spearpoint_next (one line)
-Never: effect_ran, minted, authority_delta>0, network URP claim
-```
 
-## TRUE-ULTRA-MICRO spearpoint (this season)
+**AX (agent experience) rule:** one intention in → one sealed cycle out → human always sees  
+what passed, what was NOT_RUN, what was withheld, and the next spearpoint.  
+Unforgettable = **honest rails visible**, not glow or ceremony.
 
-**Special case 1:** `src/lib/dema/invoke-loop.ts` — `invoke()` closed loop with PoT rails, process mining, HHMM *labels*, hashtable, diffusion, seal.  
-**Special case 2 (next):** `src/lib/urp/micro-hgraph.ts` + `npm run invoke:check` — local hypergraph retrieve + hierarchical reason climb + fail-closed self-harness (critique / compliance / consent).  
-**Acceptance:** tests green · `invoke:check` PASS · retrieve `LOCAL_CANON_RETRIEVE_ONLY` · never hosted RAG / never mint.
+**Mission-scale linchpin (design, Dema):** same ladder with mission as durable object  
+`INTENT_BOUND → … → RECEIPTED` driven by harness — **HELD** until C-005 / ADR+GO.
 
-## Autopoietic loop — honest binding
+---
 
-The “perfect closed loop” in roots is **seed → proof → correct/stop**, not unsupervised self-mutation.  
-`invoke()` is the minimalist agent cycle that **refuses** to autopoietically widen authority.
+## 5. Razor’s Edge of Execution (BIZRA now)
+
+| Edge | Cut |
+|---|---|
+| **Tip of the spear** | Dema **C-005** — `npm run check` green without false-green on `.next` |
+| **Skeleton of Quest 001** | Mission loop + harness (bind done; organs HELD) |
+| **Soil teaching surface** | This repo’s Face/`invoke()` — keep PREVIEW_ONLY |
+| **Forbidden under silence** | Federation · economy mint · FOREST · rename mission-loop phases · invent `executor.ts` |
+| **Authority** | Exact-string GO only; recommendation brackets ≠ GO |
+
+Compressed:
+
+\[
+\boxed{
+\text{C-005 green}
+\;\rightarrow\;
+\text{Quest 001 circuit}
+\;\rightarrow\;
+\text{human usefulness (C-010)}
+}
+\]
+
+Not: singularity pulse. Not: RSI activation. Not: fabric materialization.
+
+---
+
+## 6. Autopoietic loop — honest binding
+
+Roots’ “perfect closed loop” = **intention → bounded act → independent proof → correct or stop**.  
+`invoke()` is the ultra-micro agent that **refuses** to autopoietically widen authority.  
+House of Wisdom compounding is by **hash-cited verified procedure**, not self-reward.
+
+---
+
+## 7. Peak actionable distillation (TRUE-ULTRA-MICRO)
+
+| # | Act | Where | Needs |
+|---|---|---|---|
+| 1 | Keep `invoke:check` green; Face shows TFP/PoT/FDE each turn | BIZRA_URP | Done / maintain |
+| 2 | **C-005** honest check disposition | Dema | `GO: C-005` |
+| 3 | Optional: `harness orient` read-only (exit 0/2/4) | Dema | GO after/beside C-005 |
+| 4 | Quest 001 = first full mission circuit | Dema C-008/C-009 | Later GO |
+| 5 | Never: hosted RAG, mint, Node1, FOREST under STOP | Estate | Standing law |
+
+---
+
+## 8. Diagnostic doxology (one breath)
+
+> Pool capability. Preserve sovereignty.  
+> Discover broadly. Qualify rigorously. Lease narrowly. Execute minimally.  
+> Observe independently. Reward verified benefit.  
+> Every consequential claim stops exactly where its proof stops.  
+> Architecture names the destination; receipts name the mile.
+
+---
+
+## 9. Did / did not (this synthesis pass)
+
+**Did:** Absorb roots · north-star bind · mission-loop bind · invoke/hgraph · estate STOP · C-005 tip · SNR on ceremony titles · re-measure `invoke:check`.  
+**Did not:** Activate RSI · claim singularity · mint impact · open federation · implement Dema harness organs · treat north-star as live fabric.
+
+**Next human phrase that moves the estate:** `GO: C-005`
