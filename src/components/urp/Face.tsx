@@ -7,12 +7,12 @@ import {
   contextLessons,
   detectVerb,
   holdTurn,
-  previewFaceTurn,
   publicContract,
   type Checkpoint,
   type FaceTurn,
   type PublicContract,
 } from "@/lib/dema/face";
+import { invoke, type InvokeCycle } from "@/lib/dema/invoke-loop";
 import { Section } from "./Shell";
 
 const STORE = "bizra-dema-face-v1";
@@ -53,7 +53,7 @@ const DOES_NOT = [
   "An independent witness. Seeing this screen is a self-report.",
   "A green sealing run of the node’s tests, check, or guidance.",
   "A launcher bound to a checkout.",
-  "A live network, a token, a mint, or a self-evolving loop.",
+  "A live network, a token, a mint, or an autopoietic RSI loop. invoke() is preview-only.",
 ];
 
 interface Log {
@@ -119,6 +119,7 @@ export function Face() {
   const [branch, setBranch] = useState<string | null>(null);
   const [handoff, setHandoff] = useState<PublicContract | null>(null);
   const [standId, setStandId] = useState<string | null>(null);
+  const [cycle, setCycle] = useState<InvokeCycle | null>(null);
 
   useEffect(() => {
     const stored = readLog();
@@ -158,7 +159,7 @@ export function Face() {
 
   function preview(text: string, asRoot: boolean) {
     const mode = asRoot || !parent ? "root" : "continue";
-    const next = previewFaceTurn({
+    const cycleNext = invoke({
       sentence: text,
       mode,
       parent: mode === "continue" ? parent : null,
@@ -180,7 +181,8 @@ export function Face() {
             )
           : [],
     });
-    commit(next, mode);
+    setCycle(cycleNext);
+    commit(cycleNext.turn, mode);
   }
 
   function onSubmit(event: FormEvent) {
@@ -336,6 +338,29 @@ export function Face() {
           </p>
         ) : null}
       </form>
+
+      {cycle ? (
+        <aside className="mt-6 border border-gold/40 bg-raised px-4 py-4 sm:px-5" aria-label="Invoke cycle receipt">
+          <p className="font-mono text-xs uppercase tracking-widest text-gold">
+            invoke() · {cycle.truth_label} · seal {cycle.seal}
+          </p>
+          <p className="mt-2 font-mono text-[11px] uppercase tracking-widest text-mute">
+            TFP{" "}
+            {(["mind", "memory", "logic", "crypto", "receipts", "human"] as const)
+              .map((stage) => `${stage}:${cycle.protocol[stage]}`)
+              .join(" · ")}
+          </p>
+          <p className="mt-2 font-mono text-[11px] uppercase tracking-widest text-mute">
+            PoT F:{cycle.pot.formal} · C:{cycle.pot.cryptographic} · E:{cycle.pot.empirical} · $:
+            {cycle.pot.economic} · FDE {cycle.fde.class} · HHMM {cycle.hhmm.hidden}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-ivory">{cycle.spearpoint_next}</p>
+          <p className="mt-2 text-xs text-mute">
+            minted {String(cycle.minted)} · effect_ran {String(cycle.effect_ran)} · process events{" "}
+            {cycle.process.length}
+          </p>
+        </aside>
+      ) : null}
 
       <div className="mt-8" aria-live="polite">
         {!ready || !turn ? (

@@ -25,9 +25,15 @@ contributes into **one logical URP**; FATE is the only legal crossing.
 
 ## Docs
 
+**System roots (always supreme — live under Dema checkout):**
+`themassage.pdf` · `bizra.pdf` · `BIZRA_Third_Fact_v0_1_FINAL.pdf`  
+Digest + hashes: `docs/SYSTEM_ROOT_REFERENCES.md`
+
 - `docs/BIZRA_URP_System_Architecture_HLD_LLD_Technical_Spec_Master_v1.1.docx` — normative target
 - `docs/BIZRA_URP_v1.1_SYSTEM_PEAK_DOC_MAPTREE.md` — section ↔ live-binding map
 - `docs/ECOSYSTEM_MAP_AND_HEALTH.md` — cross-repo scan + health receipt
+- `docs/SEASON_PEAK_SYNTHESIS.md` — SNR gems vs noise + invoke() spearpoint
+- `src/lib/dema/invoke-loop.ts` — ultra-micro Third Fact `invoke()` (preview only)
 
 ## Develop
 
