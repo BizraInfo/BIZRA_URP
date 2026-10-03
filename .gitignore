@@ -1,0 +1,35 @@
+# dependencies
+node_modules/
+.npm/
+.pnpm-store/
+
+# build / platform output
+.vercel/
+.tanstack/
+dist/
+.output/
+.nitro/
+
+# logs & local runtime
+*.log
+.grok/preview.log
+.grok/status
+.grok/og-pending
+screenshots/*.png
+screenshots/*.json
+!screenshots/.gitkeep
+
+# editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# env (platform injects; never commit secrets)
+.env
+.env.*
+!.env.example
+
+# local scratch
+.tmp/
+.cache/

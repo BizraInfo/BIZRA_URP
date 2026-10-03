@@ -1,0 +1,653 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'"><title>BIZRA - URP Boundary Addendum v1.2</title><style>
+:root{--navy:#0a1628;--ink:#1b2a3c;--ivory:#f5f1e8;--gold:#c9a962;--muted:#586474;--line:#d9d2c5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font:16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.skip{position:absolute;top:-100px;left:16px;padding:12px;background:white;z-index:10}.skip:focus{top:12px}
+header{background:var(--navy);color:#f7f3ea;padding:48px max(24px,calc((100vw - 1180px)/2)) 40px}header .eyebrow{font-size:12px;letter-spacing:.18em;color:#ddc492}header h1{max-width:880px;margin:14px 0 18px;font:clamp(32px,5vw,54px)/1.14 Georgia,serif}header p{max-width:810px;color:#c6d0db;margin:12px 0}header .scope{display:inline-block;border:1px solid #8c7952;padding:8px 12px;font-size:13px;color:#ecd6ab}
+.layout{max-width:1250px;margin:auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:42px;padding:32px 24px 90px}
+nav{position:sticky;top:18px;align-self:start;max-height:calc(100vh - 36px);overflow:auto;font-size:12px;line-height:1.5}nav strong{display:block;margin:4px 0 12px;font-size:12px;letter-spacing:.1em}nav a{display:block;text-decoration:none;color:#405068;padding:7px 9px;border-left:1px solid var(--line)}nav a:hover{background:#e9e2d4;color:#172231}
+main{min-width:0}main>h1,main>h2:first-of-type{display:none}h2{font:30px/1.25 Georgia,serif;border-top:1px solid var(--line);padding-top:28px;margin-top:42px;scroll-margin-top:20px}h3{font-size:19px;line-height:1.4;margin-top:28px}p{margin:14px 0}blockquote{margin:26px 0;padding:2px 22px;border-left:3px solid #a7894e;font:22px/1.55 Georgia,serif;color:#253d52}a{color:#695019}a:focus-visible,[tabindex]:focus-visible{outline:3px solid #136c72;outline-offset:3px}li{margin-bottom:8px}code{font:13px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere;background:#e9e2d6;padding:2px 4px}pre{padding:20px;background:#e9e2d6;overflow:auto;border:1px solid #d8d0c1}pre code{background:none;padding:0;white-space:pre}
+.table-wrap{overflow-x:auto;margin:24px 0;border:1px solid var(--line);border-radius:4px}table{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;line-height:1.55}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line)}th{background:#e5ddce}td+td,th+th{border-left:1px solid var(--line)}tr:last-child td{border-bottom:0}footer{border-top:1px solid var(--line);padding:26px;text-align:center;font-size:12px;color:var(--muted)}
+@media(max-width:900px){.layout{grid-template-columns:1fr;gap:12px;padding:22px 20px 60px}nav{position:static;max-height:220px;border-bottom:1px solid var(--line);padding-bottom:12px}nav a{display:inline-block;margin-right:4px}header{padding:35px 22px}h2{font-size:26px}blockquote{font-size:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{nav,.skip{display:none}.layout{display:block;max-width:none;padding:0}header{background:none;color:black;padding:16px 0}header p,header .eyebrow,header .scope{color:black}.scope{border-color:black}body{background:white;color:black;font-size:10pt}h2{break-after:avoid;font-size:20pt}.table-wrap{overflow:visible;break-inside:avoid}table{min-width:0;font-size:8pt}pre{white-space:pre-wrap}footer{font-size:8pt}}
+</style></head><body><a href="#content" class="skip">Skip to content</a><header><div class="eyebrow">BIZRA / DEMA &nbsp; - &nbsp; BOUNDARY REVIEW v1.2</div><h1>The commons expands capability.<br>It does not acquire the human.</h1><p>A source-grounded review of the proposed URP architecture, integrated with the DEMA v1.1 product boundary. One product experience, separately governed domains, no silent scope expansion.</p><div class="scope">DESIGN ADDENDUM &nbsp; | &nbsp; AC5 UNCHANGED &nbsp; | &nbsp; NO NETWORK OR ECONOMIC ACTIVATION</div></header><div class="layout"><nav aria-label="Contents"><strong>CONTENTS</strong><a href="#section-0">0. Source boundary and precedence</a><a href="#section-1">1. Executive evaluation</a><a href="#section-2">2. One product; separately governed domains</a><a href="#section-3">3. Topology: mediation does not mean possession</a><a href="#section-4">4. Admission must protect both sides</a><a href="#section-5">5. Ownership: private source, offered projection, shared evidence</a><a href="#section-6">6. Preserve the 13-layer map as a map</a><a href="#section-7">7. SAT: capacity is not independence</a><a href="#section-8">8. Resource Passports need scope and expiry</a><a href="#section-9">9. Minimum future contract boundary</a><a href="#section-10">10. Recovery: a timeout is not evidence that nothing happened</a><a href="#section-11">11. Privacy, custody, and governance are separate obligations</a><a href="#section-12">12. Economics: keep distinct facts distinct</a><a href="#section-13">13. BlockGraph, BlockTree, and Genius Block remain research choices</a><a href="#section-14">14. Product fusion: WORLD should expose choices, not architecture</a><a href="#section-15">15. Sequence without scope drift</a><a href="#section-16">16. Selected external references: what transfers and what does not</a><a href="#section-17">17. What changed in the product baseline</a><a href="#section-18">18. Final disposition</a><a href="CODEX_URP_SCOPE_NOTE.md">Codex/Luna scope note</a><a href="sources/PRODUCT_SPEC_v1_1.original.html">Preserved v1.1 product specification</a></nav><main id="content"><h1>BIZRA / DEMA</h1>
+<h2>URP Boundary Addendum v1.2</h2>
+<p><strong>Status:</strong> proposed design addendum to DEMA Product Convergence v1.1. Not a ratified constitution, repository migration, protocol implementation, financial product, or production qualification.</p>
+<p><strong>Prepared:</strong> 17 September 2026, Dubai.<br/>
+<strong>Purpose:</strong> incorporate the supplied URP proposal without moving the current Node0 implementation boundary.<br/>
+<strong>Unchanged product:</strong> My Node; DEMA; HOME / MISSION / WORLD.<br/>
+<strong>Unchanged implementation scope:</strong> the exact existing AC5 criterion, once bound on the implementation host.<br/>
+<strong>Delivery type:</strong> source-grounded review, proposed refinements, and implementation handoff. No new simulation or runtime tests were run.</p>
+<blockquote>
+<p>The Node remains the human's home. URP coordinates what that human chooses to offer or request. The commons must not become the sovereign.</p>
+</blockquote>
+<h2 id="section-0">0. Source boundary and precedence</h2>
+<p>This addendum compares two complete supplied documents:</p>
+<ul>
+<li><strong>U:</strong> <code>Pasted text.txt</code>, the URP proposal, 1,102 lines in its backing file. Its statements about architecture, economics, repository placement, and Cell-0 are proposals, not observations of deployed systems.</li>
+<li><strong>P:</strong> <code>PRODUCT_SPEC.html</code>, DEMA Product Convergence v1.1. It separates the full product direction, AC5 implementation, and the synthetic prototype.</li>
+<li><strong>D:</strong> the user's decision record in the conversation: operational impact; AC5 only; founder usefulness primary; DCAAP as recording vocabulary; RTX context only; prefill/decode/cache paths unaltered.</li>
+<li><strong>R1-R6:</strong> selected public primary references checked for limited technical context; listed in section 16. These are reference material, not BIZRA authority.</li>
+</ul>
+<p>The source files are preserved as byte-identical copies under <code>sources/</code>. Their SHA-256 values are in <code>evidence/source_manifest.json</code>. The header review map covers every heading in U, including nested headings. It does not claim that the proposal is independently validated.</p>
+<p><strong>Precedence for this design packet:</strong> D constrains what may be implemented; P remains the proposed product baseline; U contributes proposed shared-domain architecture; this addendum states its recommendations explicitly. No document here creates a new human grant. Repository and runtime ownership must be rebound before any future edit.</p>
+<p>No current GitHub refs, installed services, key custody, public network, or real mission were inspected during this addendum. Prior source-status statements remain historical/source-bound. No claim is made that BIZRA-URP currently exists as a repository or service.</p>
+<h2 id="section-1">1. Executive evaluation</h2>
+<p><strong>Retain:</strong> the separation of personal and shared domains; a distributed rather than compulsory central URP; non-custodial key intent; bounded resource leases; system-side SAT; resource evidence; explicit failure containment; and the rule that the commons cannot acquire ownership of the human. These are the strongest transferable contributions of U [U:9-45, 49-116, 141-187, 541-698, 798-843].</p>
+<p><strong>Refine:</strong> repository boundaries into enforceable trust boundaries; requester consent into two-sided admission; resource passports into dated, scoped evidence; SAT counts into disclosed independence; completion into observed and reconciled outcomes; and the wallet into separate authority, accounting, and presentation responsibilities. These refinements are recommendations from this review, not claims that U already specifies them.</p>
+<p><strong>Defer:</strong> the proposed repository creation or split, all 13 layers as an implementation program, consensus/finality selection, new wallet software, SEED/BLOOM activation, impact rewards, and symbolic settlement. U itself preserves a design-only track and forbids real token or federation claims [U:849-1036].</p>
+<p><strong>Main tension:</strong> U's Cell-0 recipe adds a registry, offer, request, lease, SAT check, receipt, impact calculation, and symbolic settlement. That is broader than D. It is a later experimental proposal, not an authorized interpretation of AC5.</p>
+<h2 id="section-2">2. One product; separately governed domains</h2>
+<p>U proposes <code>BizraInfo/Dema</code>, <code>BizraInfo/BIZRA-OS</code>, and <code>BizraInfo/BIZRA-URP</code> as distinct repositories [U:9-45]. Preserve that as an ownership hypothesis, not a migration decision.</p>
+<div aria-label="Scrollable specification table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Logical domain</th>
+<th>Proposed responsibility</th>
+<th>Forbidden inference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Human Node</td>
+<td>The person's mission, private knowledge, enrolled devices, and choices</td>
+<td>A device or agent process is a separate sovereign human</td>
+</tr>
+<tr>
+<td>DEMA</td>
+<td>Explain, present, accept intent, and render decisions and results</td>
+<td>An interface is the final consent authority or ledger owner</td>
+</tr>
+<tr>
+<td>Existing node runtime; BIZRA-OS is U's suggested placement</td>
+<td>Execute locally under the actual capability and consent boundary</td>
+<td>A repository name establishes process isolation or deployed ownership</td>
+</tr>
+<tr>
+<td>URP</td>
+<td>Admit and coordinate voluntarily exposed offers and bounded requests; publish shared-domain evidence</td>
+<td>Network admission grants access to private files, keys, or unoffered capacity</td>
+</tr>
+<tr>
+<td>SAT</td>
+<td>Check scoped claims under explicit verifier eligibility and independence rules</td>
+<td>Five roles are five independent people, five votes, or five fault domains</td>
+</tr>
+<tr>
+<td>WORLD</td>
+<td>The DEMA view of permitted commons information</td>
+<td>Opening WORLD joins a network or exports a resource inventory</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Recommended rule:</strong> one authoritative state-transition contract per domain, with replicas and projections allowed under that contract. This is not one global server or one global database.</p>
+<p>Use the three-domain map to locate current owners. Only an inspected conflict or an approved organizational need justifies moving code. Before a repository split, identify shared packages, trust roots, signing/release custody, schema ownership, compatibility tests, access rules, migration, and rollback. Keep the existing working product intact meanwhile.</p>
+<h2 id="section-3">3. Topology: mediation does not mean possession</h2>
+<p>U distinguishes a logical star from a physically distributed fabric [U:49-104]. That distinction is retained.</p>
+<p>Its phrase <strong>no direct node-to-node authority</strong> needs an operational definition. Recommended meaning:</p>
+<blockquote>
+<p>No requester, provider, agent, or URP operator acquires ambient administrative control of another Node. Cross-node resource use must be mediated by the applicable URP protocol and independently accepted at the affected Node boundaries.</p>
+</blockquote>
+<p>This preserves U's mediated relationship. It does not silently authorize arbitrary peer links. Whether a future data plane can use a direct, authenticated, lease-bound transport is a protocol decision to test and approve, not a conclusion from this phrase alone.</p>
+<p>A shared catalogue or scheduler must not be required to read private history, reopen saved missions, revoke local grants, or operate already permitted local capabilities. If URP is unavailable, preserve local identity and records and display the unavailable shared operation truthfully. Unavailability must not trigger an unapproved alternate provider.</p>
+<p><strong>Availability is not sovereignty.</strong> Replicating a gateway is useful, but replicated instances under one administrator still share a control risk. The design must disclose administration, update authority, and dependencies rather than count replicas as independent institutions.</p>
+<h2 id="section-4">4. Admission must protect both sides</h2>
+<p>U includes provider acceptance in its lease sequence [U:660-698]. P requires pre-effect permission for every privileged operation [P:section 5]. Their combination implies this proposed admission rule:</p>
+<pre><code class="language-text">shared work may begin only when:
+    requester permission is valid for the exact outgoing scope
+AND URP admission is valid under the pinned protocol/policy
+AND provider acceptance is valid for the exact reserved capability
+AND the execution surface enforces the accepted limits
+</code></pre>
+<p>The first condition covers data exposure, destination, budget, and effect. The provider condition covers capacity, permitted workload, isolation, time limits, and withdrawal policy. Neither party may impersonate the other.</p>
+<p>URP may refuse a request under published admission rules. It may not manufacture consent to accept it. Human sovereignty does not entitle a requester to someone else's resources; provider refusal is a legitimate result.</p>
+<p>A lease may cover multiple routine steps without repeated human interruption, but material changes must be handled by the existing grant rules. A model output, a listing, a signed request, a previous success, or a protocol upgrade is not automatically a fresh grant.</p>
+<h2 id="section-5">5. Ownership: private source, offered projection, shared evidence</h2>
+<p>The source separates private keys from shared economic state [U:141-208]. Extend that separation consistently:</p>
+<div aria-label="Scrollable specification table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Information</th>
+<th>Source/authority</th>
+<th>URP may receive</th>
+<th>Remains forbidden by default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Human identity</td>
+<td>Existing human identity/enrollment owner</td>
+<td>Minimum protocol identifier and applicable eligibility evidence</td>
+<td>Private biography, family details, or a new competing identity root</td>
+</tr>
+<tr>
+<td>Private mission</td>
+<td>Existing mission owner</td>
+<td>Scoped job reference and accepted task payload</td>
+<td>Whole mission history or global publication of its graph</td>
+</tr>
+<tr>
+<td>Personal memory</td>
+<td>Existing private knowledge owner</td>
+<td>A separately consented abstraction</td>
+<td>Raw chat archive or automatic DCAAP export</td>
+</tr>
+<tr>
+<td>Resource</td>
+<td>Provider's local owner and measured configuration</td>
+<td>Time-bounded offered capability projection</td>
+<td>Access to unoffered capacity or unrelated device state</td>
+</tr>
+<tr>
+<td>Signing authority</td>
+<td>Human-controlled credential/policy boundary</td>
+<td>Public verification material and permitted signed operation</td>
+<td>Private key material or an unrestricted signing oracle</td>
+</tr>
+<tr>
+<td>Usage</td>
+<td>Defined meter and scoped observations</td>
+<td>Attributable usage record</td>
+<td>Automatic claim of beneficial impact</td>
+</tr>
+<tr>
+<td>Shared accounting, if activated later</td>
+<td>Approved settlement contract/state-transition owner</td>
+<td>Necessary transaction state</td>
+<td>Ownership of the underlying person or assets</td>
+</tr>
+<tr>
+<td>Verification</td>
+<td>Eligible verifier under the relevant policy</td>
+<td>Scoped verdict with evidence and provenance</td>
+<td>Provider self-attestation relabeled as independent evidence</td>
+</tr>
+</tbody>
+</table></div>
+<p>Retention, access, and publication rules also apply to metadata and commitments. A hash or public identifier can still expose linkable information. Do not globally publish private MissionRoot or wallet relationships merely because they are hashes.</p>
+<h2 id="section-6">6. Preserve the 13-layer map as a map</h2>
+<p>U proposes L0-L12 [U:410-468]. Retain its organization for architecture review, with these limits:</p>
+<div aria-label="Scrollable specification table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Source layer</th>
+<th>Retained purpose</th>
+<th>Qualification in the fusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L0 Constitution root</td>
+<td>Shared invariants and protocol versions</td>
+<td>Identify actual amendment, emergency, and appeal authorities; no abstract unlimited operator</td>
+</tr>
+<tr>
+<td>L1 Identity / Node Passport</td>
+<td>Admission identity and eligibility</td>
+<td>Reference existing roots; identifier count does not prove unique humans</td>
+</tr>
+<tr>
+<td>L2 Membrane / gateways</td>
+<td>Authentication and scoped admission</td>
+<td>Requester and provider enforce their own boundaries</td>
+</tr>
+<tr>
+<td>L3 Resource fabric</td>
+<td>Offered compute/storage/capabilities</td>
+<td>Offer truth and current availability are separate</td>
+</tr>
+<tr>
+<td>L4 Knowledge / capability commons</td>
+<td>Qualified shared inheritance</td>
+<td>No raw private-memory ingestion; DCAAP remains recording-only now</td>
+</tr>
+<tr>
+<td>L5 Mission exchange</td>
+<td>Matching, queues, leases, budgets</td>
+<td>Scheduling is not authorization; retain budgets during retries</td>
+</tr>
+<tr>
+<td>L6 Execution fabric</td>
+<td>Bounded task execution</td>
+<td>Prove duplicate-effect handling per operation; no universal exactly-once badge</td>
+</tr>
+<tr>
+<td>L7 SAT / verification</td>
+<td>Scoped adjudication</td>
+<td>Disclose role, administrative, hardware, and evidential independence</td>
+</tr>
+<tr>
+<td>L8 Evidence / ISNAD</td>
+<td>Provenance and recorded outcomes</td>
+<td>Preserve refusal and contradiction; signed does not mean true</td>
+</tr>
+<tr>
+<td>L9 Proof of Impact</td>
+<td>Defined benefit and eligibility assessment</td>
+<td>Measured work is not automatically benefit; no impact formula invented here</td>
+</tr>
+<tr>
+<td>L10 Economic / wallet</td>
+<td>Accounting and settlement, later</td>
+<td>Separate custody from state and UI; no value activated</td>
+</tr>
+<tr>
+<td>L11 BlockGraph / finality</td>
+<td>Causal records and accepted shared checkpoints</td>
+<td>Consensus, fault model, and finality remain unresolved design choices</td>
+</tr>
+<tr>
+<td>L12 WORLD</td>
+<td>Discovery and shared experience</td>
+<td>A projection over these domains; unavailable is not empty or live</td>
+</tr>
+</tbody>
+</table></div>
+<p>This table is not an instruction to scaffold thirteen modules. Local Cell-0 work may reuse existing components after owner inspection. Domain boundaries can precede repository or service boundaries.</p>
+<h2 id="section-7">7. SAT: capacity is not independence</h2>
+<p>U's distinction between five SAT capacity identities and five governance votes is retained [U:541-599].</p>
+<p>Recommended verifier record fields include the claim scope, verifier identity, controlling operator, relevant process/hardware boundary, evidence sources, subject version, conflict checks, policy version, and adjudication result. These are semantic requirements, not a new canonical schema.</p>
+<p>A Node's SAT capacity can be useful while still sharing its operator or host with the provider. Do not suppress that fact. State which independence properties are satisfied and which are absent.</p>
+<p>For a single-founder Cell-0:</p>
+<ul>
+<li>Role separation may be implemented and tested.</li>
+<li>A deterministic verifier may independently recompute a predicate.</li>
+<li>Multiple independently controlled human/operator domains are not established by naming multiple roles or spawning processes.</li>
+<li>Network-scale collusion resistance, Sybil resistance, and governance decentralization remain unproven.</li>
+</ul>
+<p>Do not invent committees when there are no eligible independent verifiers. Return a pending or insufficient-independence result. A provider cannot override it through a higher payment, contribution count, or token balance.</p>
+<h2 id="section-8">8. Resource Passports need scope and expiry</h2>
+<p>Retain U's Resource Passport structure: identity, ownership, capability, quality, locality, privacy, economics, limits, security, and proof [U:603-656]. Add proposed evidence discipline:</p>
+<ul>
+<li>Distinguish provider declaration, observation, verification, and availability.</li>
+<li>Bind workload class, software/model version, test conditions, units, observation interval, and expiry to any benchmark.</li>
+<li>Bind the offered scope and the grant to the exact resource version.</li>
+<li>Reserve accepted capacity rather than treating an old availability record as a reservation.</li>
+<li>Make changes and revocation visible; reject stale offers when the relevant preconditions no longer hold.</li>
+<li>Advertise minimum metadata, not the entire personal asset inventory.</li>
+</ul>
+<p>The source wallet mock-up's counts, credits, storage, skills, and opportunities are illustrative. They are not current Node0 measurements [U:213-259].</p>
+<p>RTX 3090 remains context only for the active AC5 slice. No benchmarking, model swap, cache change, or sovereignty badge follows from this passport proposal.</p>
+<h2 id="section-9">9. Minimum future contract boundary</h2>
+<p>U proposes an exact frozen client protocol [U:964-976]. Recommended refinement: fix required semantics first, then version and test a concrete protocol. Do not freeze an untested wire format forever or silently downgrade it.</p>
+<p>For later authorized design/implementation, the existing contract owner or an approved adapter should bind:</p>
+<div aria-label="Scrollable specification table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Contract content</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Protocol and policy versions</td>
+<td>Prevent silent reinterpretation or downgrade</td>
+</tr>
+<tr>
+<td>Requester, provider, and verifying domain</td>
+<td>Prevent audience or principal confusion</td>
+</tr>
+<tr>
+<td>Opaque job ID and scoped mission reference</td>
+<td>Correlate outcomes without publishing private history</td>
+</tr>
+<tr>
+<td>Requested operation and capability version</td>
+<td>Avoid substitution after review</td>
+</tr>
+<tr>
+<td>Exact input/output commitments and targets</td>
+<td>Tie acceptance to the work actually requested</td>
+</tr>
+<tr>
+<td>Data classification, destination, retention, egress</td>
+<td>Make exposure and return handling explicit</td>
+</tr>
+<tr>
+<td>Requester grant and provider acceptance references</td>
+<td>Preserve two-sided authority</td>
+</tr>
+<tr>
+<td>Resource, cost, time, and retry budgets</td>
+<td>Prevent work amplification or unbounded consumption</td>
+</tr>
+<tr>
+<td>Expiry, revocation, cancellation, and lease generation</td>
+<td>Prevent stale workers from acting after replacement</td>
+</tr>
+<tr>
+<td>Acceptance checks and verifier eligibility</td>
+<td>Prevent self-redefinition of success</td>
+</tr>
+<tr>
+<td>Outcome and recovery semantics</td>
+<td>Distinguish attempted, uncertain, observed, and verified</td>
+</tr>
+<tr>
+<td>Evidence/record references and integrity bindings</td>
+<td>Make results checkable without new authority owners</td>
+</tr>
+</tbody>
+</table></div>
+<p>Do not create a second mission, grant, passport, or receipt identity if an existing owner already has the required contract. Map first; extend only an evidenced gap under the proper scope.</p>
+<p>The human does not fill out this table. DEMA renders material choices in plain language; existing owners supply and enforce the exact bindings.</p>
+<h2 id="section-10">10. Recovery: a timeout is not evidence that nothing happened</h2>
+<p>P already requires reconciliation before replay [P:section 8]. URP makes that requirement cross-domain.</p>
+<div aria-label="Scrollable specification table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Failure or change</th>
+<th>Proposed required behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Request not admitted</td>
+<td>No execution; preserve the refusal reason</td>
+</tr>
+<tr>
+<td>Lease accepted, request delivery unknown</td>
+<td>Resolve job identity; do not create another job to escape uncertainty</td>
+</tr>
+<tr>
+<td>Provider changed or lease expired</td>
+<td>Revalidate the exact scope; an old approval cannot silently follow a new provider</td>
+</tr>
+<tr>
+<td>Effect may have happened; result lost</td>
+<td>Preserve uncertain state; inspect authoritative destination and records before retry</td>
+</tr>
+<tr>
+<td>Worker continues after reassignment</td>
+<td>Resource owner rejects stale lease generation; this needs a tested enforcement mechanism</td>
+</tr>
+<tr>
+<td>Conflicting observations/receipts</td>
+<td>Preserve both and hold promotion; do not overwrite the disagreement</td>
+</tr>
+<tr>
+<td>Revocation while work runs</td>
+<td>Stop what can be stopped; report irreversible work and residual exposure honestly</td>
+</tr>
+<tr>
+<td>Verifier unavailable or ineligible</td>
+<td>Preserve available output as unverified; no invented approval</td>
+</tr>
+<tr>
+<td>URP overload or outage</td>
+<td>Bounded retry/backoff/deadline behavior; keep local history and local permitted work available</td>
+</tr>
+<tr>
+<td>Settlement result unknown, in a future economic scope</td>
+<td>Reconcile authoritative accounting; do not charge or pay again blindly</td>
+</tr>
+</tbody>
+</table></div>
+<p>These are test obligations, not guarantees delivered by this document. End-to-end exactly-once behavior must be established for the specific operation and its destination. Idempotency keys, leases, and logs are mechanisms to assess, not a substitute for that proof.</p>
+<h2 id="section-11">11. Privacy, custody, and governance are separate obligations</h2>
+<h3>Private keys</h3>
+<p>Retain the source's custody boundary. Account abstraction illustrates programmable validation, but does not itself establish that a compromised credential cannot cause unlimited loss [R1].</p>
+<p>The later threat model must identify which credential is compromised, what authority it controls, what limits are enforced outside that credential, how recovery works, and which parties can alter those limits. A fully compromised administrator or signing root is a different case from a compromised scoped worker credential.</p>
+<p>A local key file readable by every process is not isolated custody. Conversely, keeping a key local does not determine whether a signed transaction is safe. No keys, signing systems, or wallet policies were inspected or changed here.</p>
+<h3>Encrypted task capsules</h3>
+<p>Retain encryption as a candidate transport/storage protection. Do not turn it into a claim that the executing provider cannot see task data. The threat model must identify where plaintext exists and who can read it. Confidential execution or other cryptographic mechanisms, when useful, need their own claims and verification; they are not activated by the word encrypted.</p>
+<h3>Commons governance</h3>
+<p>The source says URP lies outside each individual human jurisdiction. Recommended meaning: URP is not the property of any single participant's private Node. It does not mean lawless, beyond accountability, or entitled to govern people's private lives.</p>
+<p>Name the real powers: admission, suspension, scheduling policy, protocol update, emergency action, verification assignment, and eventual settlement. Give each a bounded authorized actor, observation trail, challenge path, and recovery policy.</p>
+<p>A constitutional phrase does not prevent administrative capture. The actual actors who can change code, deploy binaries, rotate roots, or override policy belong in the threat model.</p>
+<h2 id="section-12">12. Economics: keep distinct facts distinct</h2>
+<p>Retain U's proposed terminology: <strong>SEED</strong> for utility/service/resource accounting and <strong>BLOOM</strong> for a verified-impact growth layer [U:735-794]. The source does not provide a complete issuance, redemption, funding, loss-allocation, or legal model. This addendum supplies none.</p>
+<p>Recommended separation:</p>
+<div aria-label="Scrollable specification table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Record</th>
+<th>Meaning</th>
+<th>What it does not prove</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resource allowance</td>
+<td>A bounded permission to consume a specified resource</td>
+<td>Money, an asset claim, or earned impact</td>
+</tr>
+<tr>
+<td>Measured usage</td>
+<td>Observed consumption in explicit units and interval</td>
+<td>Useful output or benefit</td>
+</tr>
+<tr>
+<td>Accepted service outcome</td>
+<td>Frozen contractual checks passed for the task</td>
+<td>Broad human benefit or independent long-term impact</td>
+</tr>
+<tr>
+<td>Human usefulness</td>
+<td>Actual human evaluation</td>
+<td>Sufficient safety, consent, or an automatic reward</td>
+</tr>
+<tr>
+<td>Impact assessment</td>
+<td>Defined benefit with evidence, attribution, and limitations</td>
+<td>Automatic eligibility or a specific monetary value</td>
+</tr>
+<tr>
+<td>Reward eligibility</td>
+<td>Published rule applied to qualified evidence</td>
+<td>A completed settlement</td>
+</tr>
+<tr>
+<td>Settlement</td>
+<td>Accounting transition under an activated, verified contract</td>
+<td>Permission to reinterpret any earlier claim</td>
+</tr>
+</tbody>
+</table></div>
+<p>Service compensation and impact recognition may require different evidence. Whether BIZRA eventually treats them separately is an economic-design decision, not a change made here. All remain inactive in this scope.</p>
+<p>A simulated credit or symbolic settlement must live in an explicitly synthetic namespace with no spendability, redemption, real balance, reputation, or authority consequence. Do not convert the record to live value by relabeling it.</p>
+<p>Privacy and consent remain hard conditions; a high impact score cannot compensate for their violation. No financial, legal, security, or Shariah certification is implied.</p>
+<h2 id="section-13">13. BlockGraph, BlockTree, and Genius Block remain research choices</h2>
+<p>U labels the graph-plus-checkpoint idea a hypothesis, and that label must survive the fusion [U:472-537]. The term <strong>Genius Block</strong> is retained as U's candidate term, not silently corrected to Genesis Block or promoted to a canonical protocol object.</p>
+<p>A causal graph describes relationships. A checkpoint commits to selected state. Neither independently specifies how conflicting updates are resolved or why participants should accept one history.</p>
+<p>Before a finality claim, define the fault/adversary model, membership/eligibility, ordering rule, equivocation handling, data availability, partition behavior, upgrade authority, and safety/liveness tests. Only domains requiring shared conflict resolution should enter the shared checkpoint; private mission details remain private.</p>
+<p>One authoritative owner per domain does not require globally serializing every read, token generation, local file write, or model call. The eventual consistency and ordering requirements must follow the invariants being protected.</p>
+<p>A single-machine Cell-0 may test persistence and replay. It cannot by itself establish Byzantine finality, independent custody, or a decentralized network.</p>
+<h2 id="section-14">14. Product fusion: WORLD should expose choices, not architecture</h2>
+<p>No fourth top-level space is introduced. HOME / MISSION / WORLD remains the product structure.</p>
+<p><strong>HOME</strong> retains private identity, missions, knowledge, and local capability views. Losing the commons connection must not erase the home.</p>
+<p><strong>MISSION</strong> shows whether the current accepted plan requires shared resources. Before any external action, the material destination, payload, limits, and consent must be visible. Returned work is an observation or candidate artifact until the applicable verifier accepts it.</p>
+<p><strong>WORLD</strong> presents permitted resource offers, requests, commitments, and shared evidence. A future wallet/accounting view can appear here, but signing authority remains at the human boundary, and private resource management need not require network membership.</p>
+<h3>Text wireframe: disconnected / not activated</h3>
+<pre><code class="language-text">WORLD                         Design preview - not connected
+
+The commons is optional.
+Your saved missions remain at Home.
+
+Connection              Not established
+Published resource offers   Not queried
+Shared job requests         Not queried
+Signing / settlement        Not enabled in this preview
+
+[Read the sharing boundary]          [Return Home]
+</code></pre>
+<p>These are design labels, not a report of current Node0 state. Real UI code must derive its statuses from current authorized observations. No invented balances, provider counts, verified skills, online nodes, or live SAT badges.</p>
+<h3>Future material decision, after separate activation</h3>
+<p>The card would show the exact work, provider, outgoing data, purpose, cost/resource ceiling, validity, evidence, and what cannot be undone. It should disclose provider substitutions, training/retention policy where relevant, and any new permission request. It must preserve the existing consent ceremony and offer a clear refusal path.</p>
+<p>The private origin of DEMA's name is still a design responsibility, not shared-network metadata or a promotional default. The commons must not receive a founder's or any user's family story through a convenient export.</p>
+<h2 id="section-15">15. Sequence without scope drift</h2>
+<h3>Now: this addendum only</h3>
+<p>Preserve the architecture boundary, review decisions, and the product-to-commons interface requirements. No new repo, service, schema implementation, wallet, network test, model call, or state owner.</p>
+<h3>Active implementation: existing AC5</h3>
+<p>Bind its exact owner and text. Apply only changes that AC5 requires and the current lease permits. A helpful URP idea is not enough to include it. Preserve founder-usefulness evaluation, DCAAP recording-only status, and the unaltered Governance Baseline.</p>
+<h3>Later, separately authorized Cell-0 experiment</h3>
+<p>First inspect and reuse existing Cell-0/URP/resource contracts. Do not assume the name denotes a missing implementation.</p>
+<p>A narrowly proposed experiment could exercise one offer, one request, two-sided acceptance, bounded execution, scoped verification, evidence, and restart/reconciliation. It should use a declared safe environment and explicit budgets. Synthetic role identities must be labeled as such.</p>
+<p>U's impact-calculation and symbolic-settlement steps remain optional future extensions, not prerequisites of the first interface proof or AC5. They require defined semantics and separate authority. A local experiment demonstrates only the cases executed; it does not prove the complete network genome.</p>
+<h3>Later still</h3>
+<p>Independent operators, network faults, adversarial admission, dispute procedures, measured privacy, and eventually economic activation need their own qualification. Each stage earns a bounded claim rather than inheriting a universal GREEN.</p>
+<h3>Proposed conformance scenarios - none executed in this addendum</h3>
+<div aria-label="Scrollable specification table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Scenario</th>
+<th>Required observable</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U01</td>
+<td>Requester has no outgoing grant</td>
+<td>No payload dispatch; reason retained</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U02</td>
+<td>Provider declined or offer expired</td>
+<td>No work starts despite requester approval</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U03</td>
+<td>Provider/target changed after approval</td>
+<td>Existing grant cannot silently transfer</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U04</td>
+<td>Job reply lost after potential effect</td>
+<td>Uncertainty and reconciliation, not blind replay</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U05</td>
+<td>Stale worker after reassignment</td>
+<td>Old lease generation cannot commit new effect</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U06</td>
+<td>Provider also controls verifier</td>
+<td>Insufficient independence disclosed; no independent-proof claim</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U07</td>
+<td>Usage recorded, output not accepted</td>
+<td>No automatic impact or reward</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U08</td>
+<td>Synthetic settlement record exists</td>
+<td>No spendability, redemption, reputation, or real balances</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U09</td>
+<td>Encrypted transport, provider sees plaintext</td>
+<td>Confidentiality claim stays within actual protection</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U10</td>
+<td>URP unavailable</td>
+<td>Local identity and saved history remain; shared status unavailable</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U11</td>
+<td>Incompatible protocol/policy version</td>
+<td>No silent downgrade or reinterpretation</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U12</td>
+<td>Private record appears in shared evidence</td>
+<td>Exposure rejected or held for explicit minimization/review</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U13</td>
+<td>Conflicting receipts</td>
+<td>Both preserved; promotion held and dispute path identified</td>
+<td>NOT_RUN</td>
+</tr>
+<tr>
+<td>U14</td>
+<td>Withdrawal during running job</td>
+<td>Stop status and residual effects reported truthfully</td>
+<td>NOT_RUN</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="section-16">16. Selected external references: what transfers and what does not</h2>
+<p>The source's historical theft percentages were not independently checked for this addendum and are not reused as verified findings. No Bitcoin-to-2026 threat-history audit was performed.</p>
+<ul>
+<li><strong>R1 - ERC-4337:</strong> programmable validation is a relevant mechanism; it does not guarantee limited damage for every compromised key. <a href="https://eips.ethereum.org/EIPS/eip-4337">Primary specification</a>.</li>
+<li><strong>R2 - EIP-7732:</strong> separates execution and consensus validation; its payload-timeliness committee is not required to validate execution. This is not a general-purpose proof of human benefit. <a href="https://eips.ethereum.org/EIPS/eip-7732">Primary specification</a>.</li>
+<li><strong>R3 - Google Borg:</strong> admission, packing, sharing, isolation, and recovery support the scheduler lesson. That deployment context does not establish permissionless URP security. <a href="https://research.google/pubs/large-scale-cluster-management-at-google-with-borg/">Primary paper abstract</a>.</li>
+<li><strong>R4 - Google SRE:</strong> retry limits, backoff, budgets, and deadline propagation support bounded recovery. A retry budget does not establish duplicate-effect safety. <a href="https://sre.google/sre-book/addressing-cascading-failures/">Primary chapter</a>.</li>
+<li><strong>R5 - Kubernetes multi-tenancy:</strong> tenant isolation is a policy/runtime obligation, not a consequence of naming separate directories or namespaces. <a href="https://kubernetes.io/docs/concepts/security/multi-tenancy/">Official documentation</a>.</li>
+<li><strong>R6 - Bennett et al., arXiv:2605.18990:</strong> the abstract addresses wallet-balance-only voting under a stated Sybil-splitting cost model. It does not validate a BIZRA governance alternative. Only the abstract/metadata were checked here. <a href="https://arxiv.org/abs/2605.18990">Research record</a>.</li>
+</ul>
+<p>These references inform bounded recommendations. They neither ratify U nor enlarge D.</p>
+<h2 id="section-17">17. What changed in the product baseline</h2>
+<p>This is an additive proposal; P and its synthetic prototype remain unchanged.</p>
+<div aria-label="Scrollable specification table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>P section</th>
+<th>Additive design delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-3: naming and domains</td>
+<td>URP gets an explicit shared responsibility boundary; repo placement remains proposed</td>
+</tr>
+<tr>
+<td>4.6: Garden and WORLD</td>
+<td>Make optional connectivity, offer/request views, and separate signing authority explicit</td>
+</tr>
+<tr>
+<td>5: responsibility loop</td>
+<td>Add requester, URP, and provider admission without new sovereign authority</td>
+</tr>
+<tr>
+<td>6-8: blocks, state, recovery</td>
+<td>Preserve provider/version/lease context, cross-domain uncertainty, and reconciliation</td>
+</tr>
+<tr>
+<td>9: privacy</td>
+<td>Keep private originals distinct from shared projections and task capsules</td>
+</tr>
+<tr>
+<td>10: metrics</td>
+<td>Separate consumption, accepted service, usefulness, impact, eligibility, and settlement</td>
+</tr>
+<tr>
+<td>11: status</td>
+<td>No new current deployment or repository claims</td>
+</tr>
+<tr>
+<td>12-14: integration and tests</td>
+<td>Proposed conformance cases only; do not expand AC5</td>
+</tr>
+<tr>
+<td>15-16: launch and exclusions</td>
+<td>Cell-0, federation, consensus, and economy remain separately qualified future work</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="section-18">18. Final disposition</h2>
+<p><strong>Recommended design adoption:</strong> the private/shared boundary and its ownership discipline.</p>
+<p><strong>Not adopted as implementation:</strong> a three-repository migration, thirteen-layer build, or mandatory impact/settlement loop.</p>
+<p><strong>Not established:</strong> current URP existence, a live network, wallet custody, SAT independence, finality, human impact, economic value, AC5 completion, or Node0 closure.</p>
+<p>The useful fusion is not to make the Node bigger. It is to let the Node obtain and contribute more without losing its boundary.</p>
+<blockquote>
+<p>DEMA serves the human. URP coordinates the commons. Neither may convert service into ownership.</p>
+</blockquote>
+</main></div><footer>17 September 2026 - Proposed design only. No production, network, custody, impact, or settlement qualification is implied.</footer></body></html>

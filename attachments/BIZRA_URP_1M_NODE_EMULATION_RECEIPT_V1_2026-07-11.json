@@ -1,0 +1,45 @@
+{
+  "artifacts": {
+    "BIZRA_URP_1M_NODE_EMULATION_ASSUMPTIONS_V1_2026-07-11.json": {
+      "bytes": 2985,
+      "sha256": "74db43696483b3699bcd1dd8e2129daac5db005a56ddd2baeaf5ff3afa6bf1e4"
+    },
+    "BIZRA_URP_1M_NODE_EMULATION_REPORT_V1_2026-07-11.md": {
+      "bytes": 7949,
+      "sha256": "9f92f7297d148f1d995d5b80f17d04872794d73bf6cae059d6599d61ccffc1e3"
+    },
+    "BIZRA_URP_1M_NODE_EMULATION_RESULTS_V1_2026-07-11.csv": {
+      "bytes": 9621,
+      "sha256": "ec0c4b889b59b4bd457ed6a6b56a5fbd3c9da1336926c4e47cb4df19277cebbe"
+    },
+    "BIZRA_URP_1M_NODE_WORKLOAD_COMPARISON_V1_2026-07-11.csv": {
+      "bytes": 963,
+      "sha256": "947542ddb55f7a24419a0818d4316e9f1f7ca966bf5d38aaebe059d97b2546d3"
+    }
+  },
+  "claims": [
+    {
+      "claim_id": "CLM-URP-EM-2701",
+      "statement": "Under explicit base assumptions, one million admitted nodes expose approximately the modeled resources recorded in the results artifact.",
+      "status": "EMULATED"
+    },
+    {
+      "claim_id": "CLM-URP-EM-2702",
+      "statement": "A physical BIZRA network achieves the emulated scale or outperforms centralized systems on selected workloads.",
+      "status": "TARGET"
+    }
+  ],
+  "emulation_id": "URP-1M-EMULATION-V1",
+  "generated_at_utc": "2026-07-10T23:00:50.185766+00:00",
+  "limitations": [
+    "H100-equivalent values are modeling units, not measured conversions for real BIZRA hardware.",
+    "PAT identities are local roles and are not counted as shared URP workers by default.",
+    "Five SAT identities per node do not equal five independent origins; independent origins are bounded by node count.",
+    "No real BIZRA telemetry was available; all node contribution parameters are replaceable assumptions.",
+    "The centralized anchor is a vendor-published upper-scale architecture, not an independently reproduced benchmark."
+  ],
+  "runs_per_scale_scenario": 500,
+  "schema": "bizra.emulation_receipt.v0.1",
+  "seed": 20260711,
+  "truth_label": "EMULATED"
+}

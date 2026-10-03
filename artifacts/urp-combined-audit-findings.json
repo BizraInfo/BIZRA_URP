@@ -1,0 +1,82 @@
+{
+  "findings": [
+    {
+      "id": "F1",
+      "title": "45 UI/utility deps unused by src product surface",
+      "evidence_strength": 5,
+      "actionability": 4,
+      "architectural_leverage": 4,
+      "risk_reduction": 3,
+      "bizra_alignment": 4,
+      "speculation": 1,
+      "ambiguity": 2,
+      "implementation_drag": 2,
+      "convergence_level": 3
+    },
+    {
+      "id": "F2",
+      "title": "multiplayer/p2p zero product callers",
+      "evidence_strength": 5,
+      "actionability": 5,
+      "architectural_leverage": 3,
+      "risk_reduction": 2,
+      "bizra_alignment": 4,
+      "speculation": 0,
+      "ambiguity": 0,
+      "implementation_drag": 1,
+      "convergence_level": 3
+    },
+    {
+      "id": "F3",
+      "title": "walk.test exists but omitted from npm test",
+      "evidence_strength": 5,
+      "actionability": 5,
+      "architectural_leverage": 4,
+      "risk_reduction": 3,
+      "bizra_alignment": 5,
+      "speculation": 0,
+      "ambiguity": 0,
+      "implementation_drag": 1,
+      "convergence_level": 3
+    },
+    {
+      "id": "F4",
+      "title": "attachments hold superseded/overlapping architecture corpora",
+      "evidence_strength": 4,
+      "actionability": 3,
+      "architectural_leverage": 3,
+      "risk_reduction": 2,
+      "bizra_alignment": 4,
+      "speculation": 1,
+      "ambiguity": 2,
+      "implementation_drag": 2,
+      "convergence_level": 2
+    },
+    {
+      "id": "F5",
+      "title": "auth/db/app-data scaffold present with auth OFF deploy.database false",
+      "evidence_strength": 5,
+      "actionability": 2,
+      "architectural_leverage": 2,
+      "risk_reduction": 1,
+      "bizra_alignment": 3,
+      "speculation": 1,
+      "ambiguity": 3,
+      "implementation_drag": 4,
+      "convergence_level": 3
+    },
+    {
+      "id": "F6",
+      "title": "preview Face/walk kernel is tested; network/federation claims stay design-only",
+      "evidence_strength": 5,
+      "actionability": 4,
+      "architectural_leverage": 5,
+      "risk_reduction": 4,
+      "bizra_alignment": 5,
+      "speculation": 0,
+      "ambiguity": 1,
+      "implementation_drag": 1,
+      "convergence_level": 3
+    }
+  ]
+}
