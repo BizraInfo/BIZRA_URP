@@ -44,8 +44,9 @@ Never: effect_ran, minted, authority_delta>0, network URP claim
 
 ## TRUE-ULTRA-MICRO spearpoint (this season)
 
-**Special case shipped:** `src/lib/dema/invoke-loop.ts` — one `invoke()` closed loop with PoT rails, process mining events, HHMM *labels*, concept hashtable, diffusion list, content seal.  
-**Acceptance:** `invoke-loop.test.ts` green · `effect_ran===false` · `minted===false` · economic rail `NOT_APPLICABLE`.
+**Special case 1:** `src/lib/dema/invoke-loop.ts` — `invoke()` closed loop with PoT rails, process mining, HHMM *labels*, hashtable, diffusion, seal.  
+**Special case 2 (next):** `src/lib/urp/micro-hgraph.ts` + `npm run invoke:check` — local hypergraph retrieve + hierarchical reason climb + fail-closed self-harness (critique / compliance / consent).  
+**Acceptance:** tests green · `invoke:check` PASS · retrieve `LOCAL_CANON_RETRIEVE_ONLY` · never hosted RAG / never mint.
 
 ## Autopoietic loop — honest binding
 

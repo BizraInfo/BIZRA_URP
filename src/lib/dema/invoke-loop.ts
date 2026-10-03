@@ -12,6 +12,7 @@ import {
   type FaceTurn,
   type Snr,
 } from "./face.ts";
+import { retrieve, type RetrieveResult } from "../urp/micro-hgraph.ts";
 
 export const INVOKE_SCHEMA = "bizra.dema.invoke_loop.v0.1";
 export const INVOKE_TRUTH = "PREVIEW_ONLY_INVOKE";
@@ -58,6 +59,8 @@ export interface InvokeCycle {
   minted: false;
   fde: { class: FdeClass; note: string };
   spearpoint_next: string;
+  /** Local canon hypergraph retrieve — not hosted RAG. */
+  retrieve: RetrieveResult;
 }
 
 const ROOT_HASHES = {
@@ -160,15 +163,15 @@ export function invoke(input: FaceInput): InvokeCycle {
   push(process, "mind", "pass", "Intention admitted as a proposal only.");
 
   const prior = input.prior_lessons ?? [];
+  const turn = previewFaceTurn(input);
+  const snr = scoreSnr(input.sentence ?? "");
+  const canon = retrieve(input.sentence ?? "", 4);
   push(
     process,
     "memory",
-    prior.length > 0 ? "pass" : "skip",
-    prior.length > 0 ? `Retrieved ${prior.length} prior lesson(s); consult only.` : "No prior lessons in context.",
+    prior.length > 0 || canon.hits.length > 0 ? "pass" : "skip",
+    `Lessons=${prior.length} (consult only). Hgraph hits=${canon.hits.length} (${canon.truth_label}).`,
   );
-
-  const turn = previewFaceTurn(input);
-  const snr = scoreSnr(input.sentence ?? "");
   push(
     process,
     "logic",
@@ -219,7 +222,7 @@ export function invoke(input: FaceInput): InvokeCycle {
 
   const protocol: Record<TfpStage, StageVerdict> = {
     mind: "pass",
-    memory: prior.length > 0 ? "pass" : "skip",
+    memory: prior.length > 0 || canon.hits.length > 0 ? "pass" : "skip",
     logic: turn.refusal === "empty_subject" ? "block" : "pass",
     crypto: "pass",
     receipts: turn.promoted ? "pass" : "withhold",
@@ -253,8 +256,102 @@ export function invoke(input: FaceInput): InvokeCycle {
     minted: false,
     fde,
     spearpoint_next: spearpoint(turn),
+    retrieve: canon,
   };
 
   push(process, "emit", "note", `Cycle sealed ${seal}; spearpoint recorded.`);
   return cycle;
+}
+
+export interface InvokeHarnessReport {
+  ok: boolean;
+  schema: typeof INVOKE_SCHEMA;
+  truth_label: typeof INVOKE_TRUTH;
+  cases: Array<{ name: string; ok: boolean; detail: string }>;
+  self_critique: string[];
+  compliance: string[];
+  consent: string[];
+}
+
+/** Fail-closed self-harness: critique · compliance · consent. */
+export function runInvokeLoopCheck(): InvokeHarnessReport {
+  const cases: InvokeHarnessReport["cases"] = [];
+  const self_critique: string[] = [];
+  const compliance: string[] = [];
+  const consent: string[] = [];
+
+  const empty = invoke({ sentence: "", mode: "root" });
+  cases.push({
+    name: "empty_blocks",
+    ok: empty.protocol.logic === "block" && !empty.minted && !empty.effect_ran,
+    detail: `logic=${empty.protocol.logic}`,
+  });
+
+  const envelope = invoke({
+    sentence: "Draft the local summary and keep the sources here.",
+    mode: "root",
+  });
+  cases.push({
+    name: "envelope_preview",
+    ok:
+      envelope.turn.promoted &&
+      !envelope.effect_ran &&
+      !envelope.minted &&
+      envelope.pot.economic === "NOT_APPLICABLE" &&
+      envelope.retrieve.truth_label === "LOCAL_CANON_RETRIEVE_ONLY",
+    detail: `promoted=${envelope.turn.promoted}; hits=${envelope.retrieve.hits.length}`,
+  });
+
+  const noGrant = invoke({ sentence: "Send the sources to the cloud model.", mode: "root" });
+  cases.push({
+    name: "consent_stop_send",
+    ok: noGrant.fde.class === "CONSENT_STOP" && !noGrant.effect_ran && !noGrant.minted,
+    detail: `fde=${noGrant.fde.class}`,
+  });
+  consent.push(
+    noGrant.fde.class === "CONSENT_STOP"
+      ? "PASS: missing grant stops send."
+      : "FAIL: send without grant did not CONSENT_STOP.",
+  );
+
+  const granted = invoke({
+    sentence: "Send the sources to the cloud model.",
+    mode: "root",
+    grant_phrase: "GO: withhold send",
+  });
+  cases.push({
+    name: "grant_still_withholds",
+    ok: granted.turn.grant_matched && !granted.effect_ran && !granted.minted,
+    detail: `matched=${granted.turn.grant_matched}`,
+  });
+  compliance.push(
+    !granted.minted && granted.pot.economic === "NOT_APPLICABLE"
+      ? "PASS: grant cannot mint economic rail."
+      : "FAIL: economic rail leaked.",
+  );
+  compliance.push(
+    envelope.hashtable.urp_ladder === "URP_LOCAL_ACTIVE"
+      ? "PASS: ladder pinned to URP_LOCAL_ACTIVE."
+      : "FAIL: ladder drift.",
+  );
+
+  self_critique.push(
+    cases.every((c) => c.ok)
+      ? "Harness green: no false mint, no effect, consent path exercised."
+      : "Harness red: one or more invariant cases failed.",
+  );
+  self_critique.push(
+    "OUTWARD not claimed: no Dema activation, no federation, no hosted RAG.",
+  );
+
+  const ok = cases.every((c) => c.ok) && consent.every((line) => line.startsWith("PASS"));
+  return {
+    ok,
+    schema: INVOKE_SCHEMA,
+    truth_label: INVOKE_TRUTH,
+    cases,
+    self_critique,
+    compliance,
+    consent,
+  };
 }

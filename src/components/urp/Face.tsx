@@ -359,6 +359,16 @@ export function Face() {
             minted {String(cycle.minted)} · effect_ran {String(cycle.effect_ran)} · process events{" "}
             {cycle.process.length}
           </p>
+          {cycle.retrieve.hits.length > 0 ? (
+            <ul className="mt-3 space-y-1 border-t border-line pt-3">
+              {cycle.retrieve.hits.slice(0, 3).map((hit) => (
+                <li key={hit.id} className="font-mono text-[11px] uppercase tracking-widest text-mute">
+                  rag/{hit.kind} · {hit.title}
+                  <span className="mt-0.5 block normal-case tracking-normal text-ivory/80">{hit.body}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </aside>
       ) : null}
 

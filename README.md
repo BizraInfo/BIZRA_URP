@@ -34,6 +34,8 @@ Digest + hashes: `docs/SYSTEM_ROOT_REFERENCES.md`
 - `docs/ECOSYSTEM_MAP_AND_HEALTH.md` — cross-repo scan + health receipt
 - `docs/SEASON_PEAK_SYNTHESIS.md` — SNR gems vs noise + invoke() spearpoint
 - `src/lib/dema/invoke-loop.ts` — ultra-micro Third Fact `invoke()` (preview only)
+- `src/lib/urp/micro-hgraph.ts` — local canon hypergraph retrieve (not hosted RAG)
+- `npm run invoke:check` — fail-closed self-harness
 
 ## Develop
 

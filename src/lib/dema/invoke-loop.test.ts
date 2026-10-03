@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { invoke, INVOKE_SCHEMA, INVOKE_TRUTH } from "./invoke-loop.ts";
+import { invoke, runInvokeLoopCheck, INVOKE_SCHEMA, INVOKE_TRUTH } from "./invoke-loop.ts";
 
 test("invoke empty intention blocks logic and mints nothing", () => {
   const cycle = invoke({ sentence: "", mode: "root" });
@@ -61,4 +61,20 @@ test("noise words do not raise economic rail", () => {
   assert.ok(cycle.snr.noise > 0);
   assert.equal(cycle.pot.economic, "NOT_APPLICABLE");
   assert.equal(cycle.minted, false);
+});
+
+test("invoke attaches local hgraph retrieve without minting", () => {
+  const cycle = invoke({
+    sentence: "Lease the local GPU under proof discipline.",
+    mode: "root",
+  });
+  assert.equal(cycle.retrieve.truth_label, "LOCAL_CANON_RETRIEVE_ONLY");
+  assert.ok(cycle.retrieve.hits.length >= 1);
+  assert.equal(cycle.retrieve.minted, false);
+});
+
+test("self harness is green", () => {
+  const report = runInvokeLoopCheck();
+  assert.equal(report.ok, true);
+  assert.ok(report.cases.length >= 4);
 });
