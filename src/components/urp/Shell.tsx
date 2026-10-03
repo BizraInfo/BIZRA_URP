@@ -5,6 +5,7 @@ const LINKS = [
   ["manifest", "Manifest"],
   ["equation", "Equation"],
   ["topology", "Topology"],
+  ["ecosystem", "Ecosystem"],
   ["mission", "Mission"],
   ["resources", "Resources"],
   ["membrane", "Membrane"],

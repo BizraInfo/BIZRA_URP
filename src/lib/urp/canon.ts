@@ -202,6 +202,86 @@ export const DOD_GROUPS: { title: string; items: { id: string; title: string; te
   },
 ];
 
+/** Measured local paths — not a live federation map. Refresh by re-probing disk. */
+export type EcosystemHealth = "healthy" | "partial" | "blocked" | "absent" | "stale";
+
+export interface EcosystemLink {
+  id: string;
+  name: string;
+  role: string;
+  path: string;
+  remote: string;
+  health: EcosystemHealth;
+  evidence: string;
+  crosses_urp: string;
+}
+
+export const ECOSYSTEM: EcosystemLink[] = [
+  {
+    id: "urp",
+    name: "BIZRA_URP",
+    role: "Shared substrate face — resource law, lease walk, proof ceiling",
+    path: "/home/bizra-operating-system/BIZRA URP",
+    remote: "https://github.com/BizraInfo/BIZRA_URP",
+    health: "healthy",
+    evidence: "npm test 0 · typecheck 0 · preview kernel PREVIEW_ONLY",
+    crosses_urp: "This repo is the URP teaching surface and canon pin (v1.1).",
+  },
+  {
+    id: "dema",
+    name: "Dema",
+    role: "Sovereign node companion — DEMA face, FATE corridor, Node0 CLI",
+    path: "/home/bizra-operating-system/Downloads/Dema",
+    remote: "https://github.com/BizraInfo/Dema",
+    health: "partial",
+    evidence: "status Ready:false · face-turn 25/25 · activation BLOCKED",
+    crosses_urp: "Owns dema-face-turn-preview + node0-local-urp proofs; schema differs from this Face.",
+  },
+  {
+    id: "home",
+    name: "bizra-home",
+    role: "Public / Node0 product surface (Next.js)",
+    path: "/home/bizra-operating-system/bizra-home",
+    remote: "https://github.com/BizraInfo/bizra-home",
+    health: "partial",
+    evidence: "main ahead of origin by 7 · local dirty paths observed",
+    crosses_urp: "UI topology copy references URP; not a URP runtime.",
+  },
+  {
+    id: "lake",
+    name: "bizra-data-lake",
+    role: "Persistent memory / sovereignty corpus for Node0",
+    path: "/data/bizra/repos/bizra-data-lake",
+    remote: "https://github.com/BizraInfo/bizra-data-lake",
+    health: "stale",
+    evidence: "TOPOLOGY_CANON present · last seen commit habit-only tick · not re-tested this pass",
+    crosses_urp: "Constitutional topology names one shared URP; lake holds corpus, not the pool fabric.",
+  },
+  {
+    id: "node0-frontend",
+    name: "award-winner-design",
+    role: "Node0 genesis frontend (under BIZRA Node0)",
+    path: "/home/bizra-operating-system/BIZRA Node0/award-winner-design",
+    remote: "https://github.com/BizraInfo/award-winner-design",
+    health: "partial",
+    evidence: "git present · symlink to data-lake · not suite-tested this pass",
+    crosses_urp: "Presentation lane for Node0; must not mint URP authority.",
+  },
+  {
+    id: "os",
+    name: "BIZRA-OS",
+    role: "OS / system-layer identity experiments",
+    path: "/home/bizra-operating-system/Downloads/BIZRA-OS",
+    remote: "https://github.com/BizraInfo/BIZRA-OS",
+    health: "stale",
+    evidence: "repo present · not health-gated this pass",
+    crosses_urp: "Historical OS layer; not the shared URP fabric.",
+  },
+];
+
+export const ESTATE_STOP =
+  "ACTIVE_MISSION next_safe_action: STOP after D2. No Node1, federation, remote_write repair, or economy without new authority.";
+
 export const NODES: {
   id: string;
   label: string;
