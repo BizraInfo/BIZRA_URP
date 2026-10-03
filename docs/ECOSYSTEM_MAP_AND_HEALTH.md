@@ -31,6 +31,7 @@ Also present under `/data/bizra/repos/`: `bizra-node0-genesis`, `bizra-filefacto
 
 | Link | Evidence |
 |---|---|
+| URP `npm run estate:orient` | Host-only read bridge — Dema roots/return/discovery + five checkouts + campaign pointer; no dispatch, no receipt mint (`scripts/estate-orient.mjs`) |
 | Dema `npm run urp:discovery` | `scripts/urp-shared-discovery.mjs` |
 | Dema `artifacts/proofs/node0-local-urp/*` | `truth_label: URP_LOCAL_ACTIVE`, federation `not_implemented` |
 | Dema face-turn preview | `packages/core/src/dema-face-turn-preview.js` schema `bizra.dema.dema_face_turn_preview.v0.1` |
